@@ -30,6 +30,11 @@ public class Program {
 			System.out.println("rows1" + rows1);
 			
 			System.out.println("rows2" + rows2);
+			double rows2 = st.executeUpdate("UPDATE seller SET BaseSalary = 3090 WHERE DepartmentId = 2");
+			conn.commit();
+			System.out.println("rows1" + rows1);
+			
+			System.out.println("rows2" + rows2);
 		}
 		catch (SQLException e) {
 		try {
@@ -37,7 +42,7 @@ public class Program {
 			throw new DbException("Transaction rolled back ! caused by: " + e.getMessage());
 		} catch (SQLException e1) {
 			throw new DbException("erro trying to rollback ! caused by: " + e.getMessage());
-			
+				System.out.println("teste");			
 		}
 		} 
 		finally {
